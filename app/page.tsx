@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 
 type RiteId = 'hair' | 'merit' | 'gpa' | 'gold' | 'runner';
 type Scores = Record<RiteId, number>;
+type Notice = { id: number; text: string; rite: RiteId };
 const empty: Scores = { hair: 0, merit: 0, gpa: 0, gold: 0, runner: 0 };
 
 const rites = [
@@ -53,12 +54,17 @@ export default function Home() {
   const [message, setMessage] = useState('请选择今日祈福项目');
   const [muted, setMuted] = useState(false);
   const [run, setRun] = useState(0);
+  const [notices, setNotices] = useState<Notice[]>([]);
+  const noticeId = useRef(0);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const invoke = (id: RiteId, result: string) => {
     playSound(id, muted);
     setScores(previous => { const next = { ...previous, [id]: previous[id] + 1 }; try { localStorage.setItem('cyber-prayer', JSON.stringify(next)); } catch {} return next; });
     setActive(id); setMessage(result); if (id === 'runner') setRun(n => n + 1);
+    const nextNotice = ++noticeId.current;
+    setNotices(items => [...items, { id: nextNotice, text: result, rite: id }]);
+    setTimeout(() => setNotices(items => items.filter(item => item.id !== nextNotice)), 980);
     if (timer.current) clearTimeout(timer.current); timer.current = setTimeout(() => setActive(null), 720);
   };
   const total = Object.values(scores).reduce((sum, value) => sum + value, 0);
@@ -90,6 +96,9 @@ export default function Home() {
     </section>
 
     {run > 0 && <div className="runway" key={run} aria-hidden="true"><div className="forward"><img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/forward.png`} alt=""/><b>私募狗峰 −1</b></div></div>}
+    <div className="pop-stack" aria-live="polite" aria-atomic="false">
+      {notices.map((notice, index) => <div className={`click-pop pop-${notice.rite}`} style={{ '--pop-index': index } as React.CSSProperties} key={notice.id}><span>{notice.text}</span><b>祈福已受理</b></div>)}
+    </div>
     <footer><p>本系统不保证愿望实现，只保证数字增加。</p><span>非商业同人作品 · 角色版权归原权利人所有</span></footer>
   </main>;
 }

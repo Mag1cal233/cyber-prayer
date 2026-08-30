@@ -1,3 +1,3 @@
 :HL["/cyber-prayer/_next/static/chunks/140ba5eqqoz28.css","style"]
-:HL["/cyber-prayer/_next/static/chunks/0gj~6e1wqhbk7.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"0pmoJhIF9LkTz2gIHKLtN"}
+:HL["/cyber-prayer/_next/static/chunks/11t6zhhmyicd6.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Foia-kXCmMhjjYcP6SiOk"}
