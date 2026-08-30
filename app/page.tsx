@@ -42,7 +42,7 @@ function ObjectArt({ id, active }: { id: RiteId; active: boolean }) {
   if (id === 'merit') return <div className={`art fish ${active ? 'active' : ''}`} aria-hidden="true"><i className="mallet"/><i className="wood"><b>功</b></i></div>;
   if (id === 'gpa') return <div className={`art memory ${active ? 'active' : ''}`} aria-hidden="true"><i className="cookie"><b/><b/><b/><b/></i><i className="bite"/></div>;
   if (id === 'gold') return <div className={`art charm ${active ? 'active' : ''}`} aria-hidden="true"><i className="fire outer"/><i className="fire inner"/><i className="paper"><b>摸<br/>金</b></i></div>;
-  return <div className={`art rugby ${active ? 'active' : ''}`} aria-hidden="true"><i className="ball"><b/><span/></i><i className="speed a"/><i className="speed b"/></div>;
+  return <div className={`art rugby ${active ? 'active' : ''}`} aria-hidden="true"><img className="altar-forward" src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/forward.png`} alt=""/><i className="ball"><b/><span/></i><i className="speed a"/><i className="speed b"/></div>;
 }
 
 export default function Home() {
