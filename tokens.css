@@ -1,0 +1,14 @@
+:root {
+  --color-paper: oklch(13% .018 155); --color-paper-2: oklch(18% .024 155); --color-glass: oklch(13% .018 155 / 92%);
+  --color-grid: oklch(28% .035 155 / 45%); --color-ink: oklch(94% .018 105); --color-muted: oklch(70% .025 150);
+  --color-rule: oklch(37% .052 155); --color-accent: oklch(87% .2 110); --color-accent-ink: oklch(16% .018 155);
+  --color-focus: oklch(78% .21 195); --color-success: oklch(78% .2 150); --color-shadow: oklch(4% .01 155);
+  --color-cyan: oklch(68% .17 205); --color-red: oklch(62% .22 28); --color-gold: oklch(78% .18 72);
+  --color-talisman: oklch(86% .09 82); --color-wood: oklch(52% .12 50); --color-wood-dark: oklch(37% .1 42);
+  --color-cookie: oklch(75% .12 70); --color-cookie-dark: oklch(59% .12 58); --color-chip: oklch(30% .06 43); --color-ball: oklch(49% .12 48);
+  --font-display: var(--font-sans-source), sans-serif; --font-body: var(--font-sans-source), sans-serif; --font-mono: var(--font-mono-source), monospace;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
+  --t0: .68rem; --t1: .78rem; --t2: .9rem; --t3: 1rem; --t4: 1.25rem; --t5: 1.65rem; --t6: 3.5rem;
+  --ease-out: cubic-bezier(.16,1,.3,1); --ease-in: cubic-bezier(.7,0,.84,0); --ease-io: cubic-bezier(.65,0,.35,1);
+  --dur-fast: 120ms; --dur-med: 280ms; --dur-slow: 680ms; --rule-hairline: 1px; --rule: 2px; --rule-focus: 3px; --radius: 18px;
+}
